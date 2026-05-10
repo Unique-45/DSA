@@ -7,6 +7,7 @@
  */
 
 #include<stdio.h>
+#include<stdlib.h>
 
 /*
  * Function: swap
@@ -72,7 +73,7 @@ int printarray(int arr[],int n){
             printf("%d, ",arr[i]);
         }
         // Print the last element without comma
-        printf("%d]\n",arr[n-1]);
+        printf("%d]\n\n",arr[n-1]);
     }
     return 0;
 }
@@ -92,12 +93,7 @@ int main(){
         return 1;
     }
     
-    // Validate array size
-    int arr[n];
-    if(n < 1){
-        printf("No of elements can't be less than 1\n");
-        return 1;
-    }
+    int *arr = (int*)malloc(n * sizeof(int));  //Dynamically allocate memory for array
     
     // Input array elements from user
     for(int i = 0; i < n; i++){
@@ -118,6 +114,6 @@ int main(){
     // Display sorted array
     printf("Sorted array: ");
     printarray(arr, n);
-    
+    free(arr);  //Free dynamically allocated memory
     return 0;
 }
