@@ -1,0 +1,13 @@
+# Compiled executables
+insertion_sort
+merge_sort
+bubble_sort
+selection_sort
+two_sum_solver
+inversion_calculation
+
+# Object files
+*.o
+
+# System files
+.DS_Store
